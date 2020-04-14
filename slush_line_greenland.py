@@ -81,24 +81,24 @@ cmap, norm = from_levels_and_colors([-1,1,2,3,4],['white','orangered','azure','s
 
 #plot 4x3
 
-fig, axes = plt.subplots(figsize=(12,9),nrows=3, ncols=4)
-for ax in axes.flat:
+fig, axes = plt.subplots(figsize=(10,10),nrows=3, ncols=4)
+for idx, ax in enumerate(axes.flat):
     map_ax = Basemap(ax=ax, projection='lcc', resolution='l',
-            width=2E6, height=3E6, lat_0=72, lon_0=-37)   
-    map_ax.pcolormesh(lons, lats, slush_list[i],latlon=True, cmap=cmap, norm=norm)
+            width=1.9E6, height=2.8E6, lat_0=72, lon_0=-38)   
+    map_ax.pcolormesh(lons, lats, slush_list[idx],latlon=True, cmap=cmap, norm=norm)
     map_ax.drawparallels(np.arange(-80.,81.,10.),labels=[False,True,False,True])
-    axes[0, 0].set_title("January")
-    axes[0, 1].set_title("February")
-    axes[0, 2].set_title("March")
-    axes[0, 3].set_title("April")
-    axes[1, 0].set_title("May")
-    axes[1, 1].set_title("June")
-    axes[1, 2].set_title("July")
-    axes[1, 3].set_title("August")
-    axes[2, 0].set_title("September")
-    axes[2, 1].set_title("October")
-    axes[2, 2].set_title("November")
-    axes[2, 3].set_title("December")
+axes[0, 0].set_title("January")
+axes[0, 1].set_title("February")
+axes[0, 2].set_title("March")
+axes[0, 3].set_title("April")
+axes[1, 0].set_title("May")
+axes[1, 1].set_title("June")
+axes[1, 2].set_title("July")
+axes[1, 3].set_title("August")
+axes[2, 0].set_title("September")
+axes[2, 1].set_title("October")
+axes[2, 2].set_title("November")
+axes[2, 3].set_title("December")
 plt.show()
      
 # create output
